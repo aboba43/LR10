@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images\Spades.svg">
+    <title>Блекджек</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e8b57;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .game-info {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            max-width: 500px;
+            margin-bottom: 20px;
+        }
+
+        .hand {
+            font-size: 1.2em;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: #4682b4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #5a9bd3;
+        }
+
+        #result, #overallResult {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #nextRoundButton {
+            display: none;
+            margin-top: 20px;
+            background-color: #ff6347;
+        }
+    </style>
+</head>
+<body>
+    <h1>Гра Блекджек до 3 перемог</h1>
+    <p>Рахунок серії: <span id="playerWins">0</span> - <span id="dealerWins">0</span></p>
+    <div class="game-info">
+        <div>
+            <h2>Гравець</h2>
+            <p class="hand" id="playerHand">Карти: </p>
+            <p>Очки: <span id="playerScore">0</span></p>
+        </div>
+        <div>
+            <h2>Комп'ютер</h2>
+            <p class="hand" id="dealerHand">Карти: </p>
+            <p>Очки: <span id="dealerScore">0</span></p>
+        </div>
+    </div>
+    <div class="controls">
+        <button onclick="hit()">Витягнути карту</button>
+        <button onclick="stand()">Зупинитись</button>
+    </div>
+    <p id="result"></p>
+    <p id="overallResult"></p>
+    <button id="nextRoundButton" onclick="nextRound()">Наступний раунд</button>
+
+    <script src="blackjack.js"></script>
+</body>
+</html>
